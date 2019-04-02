@@ -21,8 +21,8 @@ def run_server():
         _host, _port = ('127.0.0.1', 8000)
         try:
             _host, _port = para[2].split(':')
-        except Exception:
-            raise Exception('Wrong host or port.')
+        except IndexError:
+            pass
         app.run(
             host=_host,
             port=_port,
